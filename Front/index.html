@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conecta Saúde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+
+
+  <a href="#conteudo" class="pular">Ir para o conteúdo</a>
+
+  <header>
+    <a href="index.html" class="marca" aria-label="Conecta Saúde – início">
+      <img src="img/logo.png" alt="" width="42" height="42">
+      <span>Conecta Saúde<small>Instituto Mauá de Tecnologia</small></span>
+    </a>
+
+    <nav aria-label="Navegação principal">
+      <a href="index.html" aria-current="page">Início</a>
+    </nav>
+
+    <a href="#acesso" class="botao-acessar" id="abrir-acesso">Acessar</a>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero">
+      <div class="hero-texto">
+        <span class="sobretitulo">Tecnologia que transforma</span>
+        <h1>Conectando necessidades a soluções que devolvem autonomia.</h1>
+        <p>A Conecta Saúde aproxima profissionais de instituições de saúde e laboratórios FabLab para tornar órteses e próteses mais
+          acessíveis.</p>
+                <a href="#acesso" class="botao-principal" id="comecar">Começar agora</a>
+      </div>
+
+      <div class="hero-visual">
+        <!-- Foto do FabLab: img/fablab.jpg -->
+        <img src="img/fablab.jpg"
+          alt="Impressora 3D em funcionamento em um laboratório de fabricação digital">
+
+        <section class="acesso" id="acesso" tabindex="-1" aria-labelledby="titulo-acesso">
+          <span class="sobretitulo">Área segura</span>
+          <h2 id="titulo-acesso">Acesse a plataforma</h2>
+          <p id="sub-acesso">Entre para acompanhar pedidos e produções.</p>
+
+          <div class="abas" role="group" aria-label="Entrar ou criar conta">
+            <button type="button" class="ativa" data-modo="login" aria-pressed="true">Entrar</button>
+            <button type="button" data-modo="cadastro" aria-pressed="false">Criar conta</button>
+          </div>
+
+          <form id="form-acesso" novalidate>
+            <fieldset class="perfis">
+              <legend>Seu perfil</legend>
+              <div class="perfis-opcoes">
+                <label class="perfil">
+                  <input type="radio" name="perfil" value="aacd" checked>
+                  <span class="perfil-corpo">
+                <img class="icone" src="img/icone-aacd.png" alt="">
+                    <span class="perfil-texto"><b>Instituição</b><small>Solicitar peças</small></span>
+                  </span>
+                </label>
+                <label class="perfil">
+                  <input type="radio" name="perfil" value="fablab">
+                  <span class="perfil-corpo">
+                  <img class="icone" src="img/icone-laboratorio.png" alt="">
+                    <span class="perfil-texto"><b>Laboratório</b><small>Produzir peças</small></span>
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="campo" id="campo-nome" hidden>
+              <label for="nome" id="rotulo-nome">Nome da unidade da instituição</label>
+              <input type="text" id="nome" autocomplete="organization" aria-describedby="erro-nome">
+              <small class="campo-erro" id="erro-nome" hidden></small>
+            </div>
+
+            <div class="campo-duplo" id="campo-local" hidden>
+              <div class="campo">
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" autocomplete="address-level2" placeholder="Ex.: São Caetano do Sul"
+                  aria-describedby="erro-cidade">
+                <small class="campo-erro" id="erro-cidade" hidden></small>
+              </div>
+              <div class="campo">
+                <label for="estado">UF</label>
+                <select id="estado" autocomplete="address-level1" aria-describedby="erro-estado">
+                  <option value="">UF</option>
+                </select>
+                <small class="campo-erro" id="erro-estado" hidden></small>
+              </div>
+            </div>
+
+            <div class="campo campo-logo" id="campo-logo" hidden>
+              <label for="logo">Logo da instituição <span class="opcional">(opcional)</span></label>
+              <div class="logo-upload">
+                <div class="logo-previa" id="logo-previa" aria-hidden="true"></div>
+                <div class="logo-acoes">
+                  <div class="logo-botoes">
+                    <button type="button" class="logo-botao" id="logo-escolher">Escolher imagem</button>
+                    <button type="button" class="logo-botao logo-remover" id="logo-remover" hidden>Remover</button>
+                  </div>
+                  <small class="logo-dica">PNG, JPG ou WebP, até 5 MB. Aparece ao lado do seu nome no menu.</small>
+                </div>
+              </div>
+              <input type="file" id="logo" accept="image/png,image/jpeg,image/webp" hidden aria-describedby="erro-logo">
+              <small class="campo-erro" id="erro-logo" hidden></small>
+            </div>
+
+            <div class="campo">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" placeholder="nome@instituicao.org.br" autocomplete="email" required
+                aria-describedby="erro-email">
+              <small class="campo-erro" id="erro-email" hidden></small>
+            </div>
+
+            <div class="campo">
+              <label for="senha">Senha</label>
+              <div class="campo-senha">
+                <input type="password" id="senha" placeholder="Mínimo de 8 caracteres" autocomplete="current-password"
+                  minlength="8" required aria-describedby="erro-senha aviso-caps">
+                <button type="button" class="ver-senha" id="ver-senha" aria-pressed="false" aria-label="Mostrar senha">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <g class="olho-aberto"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></g>
+                    <g class="olho-fechado" style="display:none"><path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a19.8 19.8 0 0 1 5.06-5.94M9.9 4.24A10.9 10.9 0 0 1 12 5c7 0 11 7 11 7a19.9 19.9 0 0 1-3.17 4.19M1 1l22 22"/></g>
+                  </svg>
+                </button>
+              </div>
+              <small class="campo-erro" id="aviso-caps" role="status" hidden>Caps Lock está ativado.</small>
+              <small class="campo-erro" id="erro-senha" hidden></small>
+            </div>
+
+            <button type="button" class="link-esqueci">Esqueci minha senha</button>
+
+            <div class="termo-bloco" id="campo-termo" hidden>
+              <label class="termo">
+                <input type="checkbox" id="aceite" aria-describedby="erro-aceite">
+                <span>Concordo com os <a href="#termos">Termos de Uso</a> e a <a href="#privacidade">Política de
+                    Privacidade</a>.</span>
+              </label>
+              <small class="campo-erro" id="erro-aceite" hidden></small>
+            </div>
+
+            <p class="aviso" id="erro-acesso" role="alert" hidden></p>
+
+            <button type="submit" class="botao-entrar" id="botao-acesso" disabled>
+              <span class="botao-texto">Entrar</span>
+              <span class="spinner" aria-hidden="true"></span>
+            </button>
+            <p class="lgpd"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg> Ambiente protegido conforme a LGPD</p>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <section class="secao" id="como-funciona">
+      <div class="secao-topo">
+        <div>
+          <span class="sobretitulo">Simples e transparente</span>
+          <h2>Da necessidade à entrega, passo a passo</h2>
+        </div>
+        <p>Cada etapa é acompanhada pelos dois perfis, com informações claras e status sempre visível.</p>
+      </div>
+
+      <ol class="passos">
+        <li>
+          <span class="passo-numero">01</span>
+          <h3>Instituição registra</h3>
+          <p>A equipe informa medidas, material, prazo e detalhes da necessidade.</p>
+        </li>
+        <li>
+          <span class="passo-numero">02</span>
+          <h3>Laboratório aceita</h3>
+          <p>Um FabLab compatível avalia a capacidade e confirma o pedido.</p>
+        </li>
+        <li>
+          <span class="passo-numero">03</span>
+          <h3>Produção acompanhada</h3>
+          <p>As equipes acompanham a impressão e registram atualizações.</p>
+        </li>
+        <li>
+          <span class="passo-numero">04</span>
+          <h3>Entrega confirmada</h3>
+          <p>A peça é entregue à instituição e o ciclo é concluído com segurança.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="secao contato" id="contato">
+      <div>
+        <span class="sobretitulo">Fale com a equipe</span>
+        <h2>Precisa de ajuda?</h2>
+        <p>Nossa equipe está disponível para apoiar você no uso da plataforma.</p>
+      </div>
+
+      <div class="contato-links">
+        <a href="mailto:conectasaude@maua.br">
+          <svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>
+          <span><small>E-mail</small><b>conectasaude@maua.br</b></span>
+        </a>
+        <a href="tel:+551142393000">
+          <svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>
+          <span><small>Telefone</small><b>(11) 4239-3000</b></span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape-interno">
+      <div class="rodape-linha">
+        <div class="rodape-marca">
+          <img src="img/logo.png" alt="" width="44" height="44">
+          <div>
+            <b>Conecta Saúde</b>
+            <p>Uma iniciativa do Instituto Mauá de Tecnologia em parceria com instituições de saúde.</p>
+          </div>
+        </div>
+        <nav aria-label="Links do rodapé">
+          <a href="#privacidade">Privacidade</a>
+          <a href="#termos">Termos de uso</a>
+        </nav>
+      </div>
+      <p class="rodape-copy">© 2026 Instituto Mauá de Tecnologia</p>
+    </div>
+  </footer>
+
+<script src="js/app.js"></script>
+</body>
+
+</html>

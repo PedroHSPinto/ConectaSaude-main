@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de laboratório</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/pedidos.css">
+  <link rel="stylesheet" href="../css/laboratorio.css">
+    <link rel="stylesheet" href="../css/solicitacoes.css">
+  <link rel="stylesheet" href="../css/interacoes.css">
+</head>
+<body>
+
+    <header>
+    <a href="fablab.html" class="marca" aria-label="Conecta Saúde – painel">
+      <img src="../img/logo.png" alt="" width="42" height="42">
+      <span>Conecta Saúde<small>Instituto Mauá de Tecnologia</small></span>
+    </a>
+
+      <nav aria-label="Navegação principal">
+      <a href="solicitacoes.html">Solicitações recebidas <span class="aba-contador">3</span></a>
+      <a href="fablab.html" aria-current="page">Cadastro do laboratório</a>
+    </nav>
+
+    <a href="../index.html" class="botao-acessar" id="botao-sair">Sair</a>
+    </header>
+  <main class="painel">
+    <div class="painel-topo">
+      <div>
+        <span class="sobretitulo">Rede Conecta Saúde</span>
+        <h1>Cadastro de laboratório</h1>
+        <p>Conte sobre sua estrutura e ajude a transformar capacidade técnica em impacto social.</p>
+      </div>
+      <div class="etapa-cartao">
+        <div class="etapa-linha">
+          <strong id="etapa-texto">Etapa 2 de 3</strong>
+          <span class="etapa-percentual" id="etapa-percentual">67%</span>
+        </div>
+        <small id="etapa-nome">Equipamentos e capacidade</small>
+        <div class="barra" role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso do cadastro">
+          <div class="barra-cheia" id="barra" style="width: 67%"></div>
+        </div>
+      </div>    
+    </div>
+        <div class="cadastro">
+      <aside class="etapas-menu">
+        <ol class="etapas" aria-label="Etapas do cadastro">
+          <li class="feito">
+            <a href="#dados">
+              <span class="etapa-bolinha">✓</span>
+              <span><b>Dados do laboratório</b><small>Identificação e contato</small></span>
+            </a>
+          </li>
+          <li class="atual">
+            <a href="#equipamento" aria-current="step">
+              <span class="etapa-bolinha">2</span>
+              <span><b>Estrutura e equipamentos</b><small>Capacidade de produção</small></span>
+            </a>
+          </li>
+          <li>
+            <a href="#requisitos">
+              <span class="etapa-bolinha">3</span>
+              <span><b>Requisitos e termo</b><small>Revisão e aceite</small></span>
+            </a>
+          </li>
+        </ol>
+
+        <div class="ajuda">
+          <span class="ajuda-icone">?</span>
+          <b>Precisa de ajuda?</b>
+          <p>Nossa equipe pode orientar seu cadastro.</p>
+          <a href="#suporte">Falar com o suporte</a>
+        </div>
+      </aside>
+
+      <div class="cadastro-conteudo">
+                <section class="form-cartao" id="dados" aria-labelledby="titulo-dados-lab">
+          <div class="form-cartao-topo">
+            <span class="form-icone"><span class="form-icone"><img class="icone" src="../img/icone-aacd.png" alt=""></span></span>
+            <div>
+              <h2 id="titulo-dados-lab">Dados do laboratório</h2>
+              <p>Informações para identificação da instituição.</p>
+            </div>
+            <span class="selo selo-entregue" id="selo-dados">✓ Preenchido</span>
+          </div>
+
+          <div class="form-corpo">
+            <div class="campo-duplo">
+              <div class="campo">
+                <label for="razao">Razão social <em>*</em></label>
+                <input type="text" id="razao" placeholder="Nome legal da instituição">
+              </div>
+              <div class="campo">
+                <label for="cnpj">CNPJ <em>*</em></label>
+                <input type="text" id="cnpj" placeholder="00.000.000/0000-00">
+              </div>
+            </div>
+
+            <div class="campo-duplo">
+  <div class="campo">
+    <label for="cidade">Cidade / UF <em>*</em></label>
+    <input type="text" id="cidade" placeholder="São Caetano do Sul / SP">
+  </div>
+  <div class="campo">
+    <label for="cep">CEP <em>*</em></label>
+    <input type="text" id="cep" placeholder="00000-000" inputmode="numeric">
+  </div>
+</div>
+            <div class="campo-duplo">
+              <div class="campo">
+                <label for="rua">Rua <em>*</em></label>
+                <input type="text" id="rua" placeholder="Nome da rua ou avenida">
+              </div>
+              <div class="campo">
+                <label for="bairro">Bairro <em>*</em></label>
+                <input type="text" id="bairro" placeholder="Nome do bairro">
+              </div>
+            </div>
+                        <div class="campo-duplo">
+              <div class="campo">
+                <label for="numero">Número <em>*</em></label>
+                <input type="text" id="numero" placeholder="Ex.: 1250">
+              </div>
+              <div class="campo">
+                <label for="complemento">Complemento</label>
+                <input type="text" id="complemento" placeholder="Bloco, sala ou referência (opcional)">
+              </div>
+            </div>
+          </div>
+        </section>
+                <section class="form-cartao" id="equipamento" aria-labelledby="titulo-equip">
+          <div class="form-cartao-topo">
+            <span class="form-icone">3D</span>
+            <div>
+              <h2 id="titulo-equip">Equipamento 3D</h2>
+              <p>Cadastre ao menos uma impressora disponível.</p>
+            </div>
+          </div>
+
+          <div class="form-corpo">
+            <div class="campo-duplo">
+              <div class="campo">
+                <label for="marca">Marca <em>*</em></label>
+                <input type="text" id="marca" placeholder="Ex.: Ultimaker">
+              </div>
+              <div class="campo">
+                <label for="modelo">Modelo <em>*</em></label>
+                <input type="text" id="modelo" placeholder="Ex.: S5">
+              </div>
+            </div>
+
+            <fieldset class="grupo">
+              <legend>Tecnologia</legend>
+              <div class="pilulas">
+                <label class="pilula"><input type="radio" name="tec" value="FDM" checked><span><b>FDM</b> <small>Filamento</small></span></label>
+                <label class="pilula"><input type="radio" name="tec" value="SLA"><span><b>SLA</b> <small>Resina</small></span></label>
+              </div>
+            </fieldset>
+
+            <div class="campo">
+              <label for="volume">Volume útil de impressão</label>
+              <input type="text" id="volume" placeholder="Ex.: 330 × 240 × 300 mm">
+              <small class="dica">Largura × profundidade × altura</small>
+            </div>
+
+            <fieldset class="grupo">
+              <legend>Materiais disponíveis</legend>
+              <div class="pilulas pilulas-check">
+                <label class="pilula"><input type="checkbox" name="mat" value="PLA" checked><span>PLA</span></label>
+                <label class="pilula"><input type="checkbox" name="mat" value="PETG"><span>PETG</span></label>
+                <label class="pilula"><input type="checkbox" name="mat" value="TPU"><span>TPU</span></label>
+                <label class="pilula"><input type="checkbox" name="mat" value="ABS"><span>ABS</span></label>
+                <label class="pilula"><input type="checkbox" name="mat" value="Resina médica"><span>Resina médica</span></label>
+              </div>
+            </fieldset>
+            <p class="erro" id="erro-imp-inline" role="alert"></p>
+            <button type="button" class="botao-principal botao-envio" id="salvar-imp">Salvar impressora</button>
+
+            <!-- O JavaScript (js/fablab.js) monta a lista de impressoras aqui -->
+            <ul class="parque" id="parque" aria-live="polite"></ul>
+            <p class="vazio" id="vazio" hidden>Nenhuma impressora ainda. Adicione a primeira.</p>
+
+            <a href="#nova-impressora" class="botao-adicionar">Adicionar outra impressora <span>+</span></a>
+          </div>
+        </section>
+        <!-- ETAPA 3: Requisitos e termo -->
+        <section class="form-cartao" id="requisitos" aria-labelledby="titulo-requisitos">
+          <div class="form-cartao-topo">
+            <span class="form-icone">3</span>
+            <div>
+              <h2 id="titulo-requisitos">Requisitos e termo</h2>
+              <p>Revise as condições e confirme o aceite.</p>
+            </div>
+          </div>
+
+          <div class="form-corpo">
+            <fieldset class="grupo">
+              <legend>Confirme que o laboratório atende aos requisitos</legend>
+              <ul class="requisitos">
+                <li>
+                  <label class="requisito">
+                    <input type="checkbox" name="req" value="espaco">
+                    <span>Possui espaço adequado e seguro para operar as impressoras 3D.</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="requisito">
+                    <input type="checkbox" name="req" value="funcionamento">
+                    <span>As impressoras cadastradas estão em funcionamento e com manutenção em dia.</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="requisito">
+                    <input type="checkbox" name="req" value="higiene">
+                    <span>Segue boas práticas de higiene e limpeza na produção de peças para saúde.</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="requisito">
+                    <input type="checkbox" name="req" value="prazo">
+                    <span>Tem disponibilidade para cumprir os prazos combinados de cada pedido.</span>
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+
+            <label class="termo">
+              <input type="checkbox" id="aceite">
+              <span>Li e aceito os <a href="#termos">Termos de Uso</a> e a <a href="#privacidade">Política de Privacidade</a>.</span>
+            </label>
+          </div>
+        </section>
+
+        <!-- SUPORTE (destino do link "Falar com o suporte") -->
+        <section class="suporte" id="suporte" aria-labelledby="titulo-suporte">
+          <h2 id="titulo-suporte">Falar com o suporte</h2>
+          <p>Nossa equipe pode orientar seu cadastro. Escolha o canal que preferir.</p>
+          <div class="suporte-canais">
+            <a href="mailto:conectasaude@maua.br">
+              <small>E-mail</small>
+              <b>conectasaude@maua.br</b>
+            </a>
+            <a href="tel:+551142393000">
+              <small>Telefone</small>
+              <b>(11) 4239-3000</b>
+            </a>
+          </div>
+        </section>
+
+        <p class="erro" id="erro-cadastro" role="alert"></p>
+
+        <!-- BOTÕES DO FINAL DO FORMULÁRIO -->
+        <div class="cadastro-acoes">
+          <a href="#equipamento" class="botao-contorno">Voltar</a>
+          <button type="button" class="botao-principal" id="enviar-cadastro">Enviar cadastro</button>
+        </div>      </div>
+    </div>
+  </main>
+
+<footer class="rodape" id="rodape">
+    <div class="rodape-interno">
+      <div class="rodape-linha">
+        <div class="rodape-marca">
+          <img src="../img/logo.png" alt="">
+          <div>
+            <b>Conecta Saúde</b>
+            <p>Uma iniciativa do Instituto Mauá de Tecnologia em parceria com instituições de saúde.</p>
+          </div>
+        </div>
+        <nav aria-label="Links do rodapé">
+          <a href="#privacidade">Privacidade</a>
+          <a href="#termos">Termos de uso</a>
+        </nav>
+      </div>
+      <p class="rodape-copy">© 2026 Instituto Mauá de Tecnologia</p>
+    </div>
+  </footer>
+    <div class="gaveta" id="nova-impressora">
+    <a href="#equipamento" class="gaveta-fundo" aria-label="Fechar o formulário"></a>
+    <section class="gaveta-painel" role="dialog" aria-labelledby="titulo-nova-imp">
+      <a href="#equipamento" class="gaveta-fechar" aria-label="Fechar">×</a>
+      <span class="sobretitulo">Equipamento 3D</span>
+      <h2 id="titulo-nova-imp">Adicionar impressora</h2>
+      <p class="gaveta-sub">Informe os dados da impressora para combinarmos com os pedidos.</p>
+
+      <form id="form-impressora" novalidate>
+        <div class="campo-duplo">
+          <div class="campo">
+            <label for="outra-marca">Marca <em>*</em></label>
+            <input type="text" id="outra-marca" placeholder="Ex.: Ultimaker">
+          </div>
+          <div class="campo">
+            <label for="outra-modelo">Modelo <em>*</em></label>
+            <input type="text" id="outra-modelo" placeholder="Ex.: S5">
+          </div>
+        </div>
+
+        <fieldset class="grupo">
+          <legend>Tecnologia</legend>
+          <div class="pilulas">
+            <label class="pilula"><input type="radio" name="outra-tec" value="FDM" checked><span><b>FDM</b> <small>Filamento</small></span></label>
+            <label class="pilula"><input type="radio" name="outra-tec" value="SLA"><span><b>SLA</b> <small>Resina</small></span></label>
+          </div>
+        </fieldset>
+
+        <div class="campo">
+          <label for="outra-volume">Volume útil de impressão</label>
+          <input type="text" id="outra-volume" placeholder="Ex.: 330 × 240 × 300 mm">
+          <small class="dica">Largura × profundidade × altura</small>
+        </div>
+
+        <fieldset class="grupo">
+          <legend>Materiais disponíveis</legend>
+          <div class="pilulas pilulas-check">
+            <label class="pilula"><input type="checkbox" name="outra-mat" value="PLA"><span>PLA</span></label>
+            <label class="pilula"><input type="checkbox" name="outra-mat" value="PETG"><span>PETG</span></label>
+            <label class="pilula"><input type="checkbox" name="outra-mat" value="TPU"><span>TPU</span></label>
+            <label class="pilula"><input type="checkbox" name="outra-mat" value="ABS"><span>ABS</span></label>
+            <label class="pilula"><input type="checkbox" name="outra-mat" value="Resina médica"><span>Resina médica</span></label>
+          </div>
+        </fieldset>
+
+        <p class="erro" id="erro-imp" role="alert"></p>
+
+        <div class="gaveta-acoes">
+          <a href="#equipamento" class="botao-contorno">Cancelar</a>
+          <button type="button" class="botao-principal botao-envio" id="add-imp">Salvar impressora</button>
+        </div>
+      </form>
+    </section>
+  </div>
+  <script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do laboratório</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/pedidos.css">
+  <link rel="stylesheet" href="../css/laboratorio_instituicao.css">
+  <link rel="stylesheet" href="../css/interacoes.css">
+</head>
+<body>
+
+  <header>
+    <a href="aacd.html" class="marca" aria-label="Conecta Saúde – painel">
+      <img src="../img/logo.png" alt="" width="42" height="42">
+      <span>Conecta Saúde<small>Instituto Mauá de Tecnologia</small></span>
+    </a>
+
+    <nav aria-label="Navegação principal">
+      <a href="aacd.html">Pedidos da Instituição</a>
+      <a href="laboratorio_instituicao.html" aria-current="page">Laboratórios</a>
+    </nav>
+
+    <a href="../index.html" class="botao-acessar" id="botao-sair">Sair</a>
+  </header>
+
+  <main class="painel">
+    <a href="laboratorio_instituicao.html" class="voltar">‹ Voltar para laboratórios</a>
+
+    <!-- CABEÇALHO DO LABORATÓRIO -->
+    <section class="lab-detalhe-topo" aria-labelledby="titulo-lab">
+      <div class="lab-detalhe-id">
+        <span class="lab-icone lab-icone-grande"><img class="icone" src="../img/icone-laboratorio.png" alt=""></span>
+        <div>
+          <p class="lab-tipo">Laboratório universitário</p>
+          <h1 id="titulo-lab">Laboratório Mauá 01</h1>
+          <p class="lab-cidade">São Caetano do Sul, SP</p>
+        </div>
+      </div>
+
+      <div class="lab-detalhe-acao">
+        <span class="lab-status">Disponível</span>
+        <a href="#registrar" class="botao-principal">Enviar solicitação <span aria-hidden="true">›</span></a>
+      </div>
+    </section>
+        <div class="lab-detalhe-grade">
+
+      <!-- IMPRESSORAS -->
+      <section class="lab-imp-cartao" aria-labelledby="titulo-imp">
+        <div class="lab-imp-topo">
+          <h2 id="titulo-imp">Impressoras disponíveis</h2>
+          <p>2 equipamentos cadastrados</p>
+        </div>
+
+        <ul class="lab-imp-lista">
+          <li class="lab-imp">
+            <span class="lab-icone lab-icone-3d" aria-hidden="true">3D</span>
+            <div class="lab-imp-info">
+              <h3>Prusa MK4</h3>
+              <p>FDM · Volume: 250 × 210 × 220 mm</p>
+              <p><b>Materiais:</b> PLA, PETG</p>
+            </div>
+            <span class="lab-status">Disponível</span>
+          </li>
+
+          <li class="lab-imp">
+            <span class="lab-icone lab-icone-3d" aria-hidden="true">3D</span>
+            <div class="lab-imp-info">
+              <h3>Ultimaker S3</h3>
+              <p>FDM · Volume: 230 × 190 × 200 mm</p>
+              <p><b>Materiais:</b> PLA, PETG, TPU</p>
+            </div>
+            <span class="lab-status lab-status-parcial">Em produção</span>
+          </li>
+        </ul>
+      </section>
+      <!-- CONTATO -->
+      <aside class="lab-contato-cartao" aria-labelledby="titulo-contato">
+        <span class="lab-avatar" aria-hidden="true">MC</span>
+        <h2 id="titulo-contato">Informações de contato</h2>
+
+        <dl class="lab-dados">
+          <div>
+            <dt>Responsável</dt>
+            <dd>Mariana Costa</dd>
+          </div>
+          <div>
+            <dt>E-mail</dt>
+            <dd>fablab@maua.br</dd>
+          </div>
+          <div>
+            <dt>Telefone</dt>
+            <dd>(11) 4239-3000</dd>
+          </div>
+        </dl>
+
+      </aside>
+    </div>
+  </main>
+
+  <footer class="rodape" id="rodape">
+    <div class="rodape-interno">
+      <div class="rodape-linha">
+        <div class="rodape-marca">
+          <img src="../img/logo.png" alt="">
+          <div>
+            <b>Conecta Saúde</b>
+            <p>Uma iniciativa do Instituto Mauá de Tecnologia em parceria com instituições de saúde.</p>
+          </div>
+        </div>
+        <nav aria-label="Links do rodapé">
+          <a href="#privacidade">Privacidade</a>
+          <a href="#termos">Termos de uso</a>
+        </nav>
+      </div>
+      <p class="rodape-copy">© 2026 Instituto Mauá de Tecnologia</p>
+    </div>
+  </footer>
+<div class="gaveta" id="registrar">
+    <a href="#" class="gaveta-fundo" aria-label="Fechar o formulário"></a>
+    <section class="gaveta-painel" role="dialog" aria-labelledby="titulo-registrar">
+      <a href="#" class="gaveta-fechar" aria-label="Fechar">×</a>
+      <span class="sobretitulo">Novo pedido</span>
+      <h2 id="titulo-registrar">Registrar necessidade</h2>
+      <p class="gaveta-sub">Preencha os dados técnicos para encontrar um laboratório compatível.</p>
+            <form id="formPedido" novalidate>
+        <div class="campo-duplo">
+          <div class="campo">
+            <label for="paciente">Código do paciente <em>*</em></label>
+            <input type="text" id="paciente" placeholder="Ex.: PAC-4821">
+            <small class="dica">Não informe o nome do paciente.</small>
+          </div>
+          <div class="campo">
+            <label for="peca">Tipo de peça <em>*</em></label>
+            <input type="text" id="peca" placeholder="Ex.: Órtese de punho">
+          </div>
+        </div>
+
+        <div class="campo-duplo">
+          <div class="campo">
+            <label for="material">Material preferencial</label>
+            <select id="material">
+              <option value="">Selecione</option>
+              <option>PLA</option>
+              <option>PETG</option>
+              <option>TPU</option>
+              <option>Nylon</option>
+              <option>Resina</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="prazo">Prazo necessário <em>*</em></label>
+            <input type="date" id="prazo">
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="medidas">Medidas e observações</label>
+          <textarea id="medidas" rows="4" placeholder="Descreva dimensões, tolerâncias e recomendações clínicas."></textarea>
+        </div>
+        <div class="campo">
+          <label for="arquivoStl">Arquivo da peça (.stl) <em>*</em></label>
+          <input type="file" id="arquivoStl" name="arquivoStl" accept=".stl">
+          <small class="dica">Envie o modelo 3D em formato .stl.</small>
+          <div class="envio-progresso" id="envioProgresso" hidden>
+            <progress id="envioBarra" max="100" value="0" aria-label="Progresso do envio do arquivo"></progress>
+            <span id="envioTexto" role="status">0%</span>
+          </div>
+        </div>
+        <fieldset class="urgencia">
+          <legend>Urgência</legend>
+          <div class="pilulas">
+            <label class="pilula"><input type="radio" name="urgencia" value="Normal" checked><span>Normal</span></label>
+            <label class="pilula"><input type="radio" name="urgencia" value="Prioritário"><span>Prioritário</span></label>
+            <label class="pilula"><input type="radio" name="urgencia" value="Urgente"><span>Urgente</span></label>
+          </div>
+        </fieldset>
+
+        <div class="campo">
+          <label for="lab">Laboratório preferencial</label>
+          <select id="lab">
+            <option value="">Qualquer laboratório compatível</option>
+            <option>FabLab Poli USP</option>
+            <option>FabLab da Mauá</option>
+          </select>
+        </div>
+
+        <p class="erro" id="erro" role="alert"></p>
+        <p class="sucesso" id="sucesso" role="status"></p>
+
+        <div class="gaveta-acoes">
+          <a href="#" class="botao-contorno">Cancelar</a>
+          <button type="submit" class="botao-principal botao-envio">Registrar pedido →</button>
+        </div>
+      </form>
+    </section>
+  </div>
+  <script src="../js/app.js"></script>
+</body>
+</html>

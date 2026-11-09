@@ -1,0 +1,185 @@
+/* Conecta Saúde – estilos das interações em JavaScript:
+   tela de sucesso, visualizador 3D (.stl), estados de lista e mensagens. */
+
+/* ---------- selos extras ---------- */
+.selo-registrado { background: #edf3f3; color: #3e4949; }
+.selo-recusado { background: #fbe4e1; color: #b3261e; }
+
+/* ---------- estados das listas ---------- */
+.pedido-aviso {
+  list-style: none;
+  padding: 32px 24px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  color: var(--muted);
+}
+.pedido-aviso-erro { color: var(--error); }
+.parque .pedido-aviso { padding: 20px; border: 1px dashed var(--line); border-radius: 12px; }
+.link-tentar {
+  margin-left: 6px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--petrol);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.detalhe-aviso { margin: 0; color: var(--muted); }
+.arquivo-indisponivel { opacity: .6; pointer-events: none; }
+
+/* ---------- mensagens e botão no cadastro do laboratório ---------- */
+.cadastro-conteudo .erro {
+  min-height: 1.3em;
+  margin: 12px 0 0;
+  color: var(--error);
+  font-size: 13px;
+  font-weight: 600;
+}
+.cadastro-conteudo > .erro { margin: 0 0 14px; }
+.form-corpo .botao-envio { margin-top: 8px; }
+
+/* ---------- visualizador 3D ---------- */
+.visualizador {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 340px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #eef4f4, #dfeaea);
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+.visualizador canvas { display: block; width: 100% !important; height: 100% !important; cursor: grab; }
+.visualizador canvas:active { cursor: grabbing; }
+.visualizador-erro { padding: 0 20px; }
+
+/* ---------- tela de sucesso ---------- */
+body.sem-rolagem { overflow: hidden; }
+
+.tela-sucesso {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(10, 38, 38, .6);
+  animation: aparece .2s ease;
+}
+.tela-sucesso :focus-visible { outline: 3px solid #f0ac3d; outline-offset: 2px; }
+
+.sucesso-caixa {
+  position: relative;
+  width: min(560px, 100%);
+  max-height: 92vh;
+  overflow-y: auto;
+  padding: 36px 32px 28px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 22px 60px rgba(10, 38, 38, .3);
+  text-align: center;
+}
+.sucesso-fechar {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: #edf3f3;
+  color: var(--ink);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+.sucesso-fechar:hover { background: var(--petrol-soft); }
+
+.sucesso-selo { width: 76px; height: 76px; margin: 0 auto 18px; }
+.sucesso-selo svg { display: block; width: 100%; height: 100%; }
+.sucesso-circulo {
+  fill: var(--success-soft);
+  stroke: var(--success);
+  stroke-width: 2;
+  stroke-dasharray: 151;
+  stroke-dashoffset: 151;
+  animation: traco .6s ease forwards;
+}
+.sucesso-check {
+  fill: none;
+  stroke: var(--success);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: traco .4s .45s ease forwards;
+}
+@keyframes traco { to { stroke-dashoffset: 0; } }
+
+.sucesso-caixa h2 {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: -.03em;
+  outline: 0;
+}
+.sucesso-texto { margin: 0 auto 4px; max-width: 440px; color: var(--muted); }
+
+.sucesso-visualizador { height: 210px; margin-top: 20px; }
+
+.sucesso-resumo {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0 0;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg);
+  text-align: left;
+}
+.sucesso-resumo div { display: flex; justify-content: space-between; gap: 16px; }
+.sucesso-resumo dt { flex: none; color: var(--muted); font-size: 12px; }
+.sucesso-resumo dd { margin: 0; min-width: 0; color: var(--ink); font-size: 14px; font-weight: 600; text-align: right; overflow-wrap: anywhere; }
+
+.sucesso-acoes { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 24px; }
+.sucesso-acoes .botao-principal { margin-top: 0; border: 0; font: inherit; font-weight: 700; cursor: pointer; }
+.sucesso-acoes .botao-contorno { background: #fff; font: inherit; font-weight: 700; cursor: pointer; }
+
+@media (max-width: 600px) {
+  .sucesso-caixa { padding: 32px 20px 22px; }
+  .sucesso-resumo div { flex-direction: column; gap: 2px; }
+  .sucesso-resumo dd { text-align: left; }
+  .sucesso-acoes { flex-direction: column; }
+  .sucesso-acoes .botao-principal,
+  .sucesso-acoes .botao-contorno { justify-content: center; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tela-sucesso { animation: none; }
+  .sucesso-circulo, .sucesso-check { animation: none; stroke-dashoffset: 0; }
+}
+
+
+/* ---------- busca, ordenação e progresso de envio (lista de pedidos) ---------- */
+.pedidos-ferramentas { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: flex-end; }
+.pedidos-ferramentas input[type="search"] {
+  min-height: 40px; min-width: 220px; padding: 0 12px; border: 1px solid #d5dede; border-radius: 8px;
+  font: inherit; font-size: 13px; background: #fff; color: inherit;
+}
+.pedidos-ferramentas input[type="search"]:focus { outline: 2px solid var(--petrol, #006767); outline-offset: 1px; }
+.botao-csv { min-height: 40px; padding: 0 14px; font-size: 13px; }
+.envio-progresso { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+.envio-progresso[hidden] { display: none; }
+.envio-progresso progress { flex: 1; height: 10px; accent-color: var(--petrol, #006767); }
+.envio-progresso span { min-width: 120px; font-size: 12px; font-weight: 600; color: var(--muted, #5d6b6b); }
+@media (max-width: 720px) {
+  .pedidos-ferramentas { justify-content: stretch; }
+  .pedidos-ferramentas input[type="search"] { flex: 1 1 100%; min-width: 0; }
+}

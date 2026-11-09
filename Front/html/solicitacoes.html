@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitações recebidas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/pedidos.css">
+  <link rel="stylesheet" href="../css/laboratorio.css">
+<link rel="stylesheet" href="../css/solicitacoes.css">
+  <link rel="stylesheet" href="../css/interacoes.css">
+</head>
+<body>
+
+  <header>
+    <a href="solicitacoes.html" class="marca" aria-label="Conecta Saúde – painel">
+      <img src="../img/logo.png" alt="" width="42" height="42">
+      <span>Conecta Saúde<small>Instituto Mauá de Tecnologia</small></span>
+    </a>
+
+      <nav aria-label="Navegação principal">
+      <a href="solicitacoes.html" aria-current="page">Solicitações recebidas <span class="aba-contador">3</span></a>
+      <a href="fablab.html">Cadastro do laboratório</a>
+    </nav>
+
+    <a href="../index.html" class="botao-acessar" id="botao-sair">Sair</a>
+  </header>
+
+  <main class="painel">
+        <div class="painel-topo">
+      <div>
+        <span class="sobretitulo">Painel do laboratório</span>
+        <h1>Solicitações recebidas</h1>
+        <p>Analise novas demandas e mantenha a instituição atualizada sobre cada produção.</p>
+      </div>
+    </div>
+        <ul class="resumo" aria-label="Resumo das solicitações">
+      <li>
+        <span class="resumo-rotulo">Novas solicitações</span>
+        <strong id="nNovas">01</strong>
+        <small>Aguardando análise</small>
+      </li>
+      <li>
+        <span class="resumo-rotulo">Aceitas</span>
+        <strong id="nAceitas">01</strong>
+        <small>Prontas para iniciar</small>
+      </li>
+      <li>
+        <span class="resumo-rotulo">Em produção</span>
+        <strong id="nProducao">01</strong>
+        <small>Em andamento</small>
+      </li>
+      <li>
+        <span class="resumo-rotulo">Prontas para entrega</span>
+        <strong id="nProntas">00</strong>
+        <small>Aguardando retirada</small>
+      </li>
+    </ul>
+        <section class="pedidos-cartao" aria-labelledby="titulo-fila">
+      <div class="pedidos-topo">
+        <div>
+          <h2 id="titulo-fila">Fila de solicitações</h2>
+          <small>3 solicitações encontradas</small>
+        </div>
+        <select id="filtro" aria-label="Filtrar solicitações por status">
+          <option value="todos">Todos</option>
+          <option value="nova">Nova</option>
+          <option value="aceita">Aceita</option>
+          <option value="producao">Em produção</option>
+          <option value="pronta">Pronta para entrega</option>
+          <option value="recusada">Recusada</option>
+        </select>
+      </div>
+
+      <ul class="pedidos" id="solicitacoes">
+        <li class="pedido solicitacao">
+          <div class="pedido-info">
+            <div class="pedido-linha1">
+              <span class="selo selo-nova">Nova</span>
+              <span class="pedido-codigo">CS-2026-0148 · Recebida hoje, 10:42</span>
+            </div>
+            <h3>Prótese de mão</h3>
+            <p>Instituição São Paulo • PLA médico • 25 jun 2026</p>
+          </div>
+                    <div class="solicitacao-lado">
+            <div class="solicitacao-dado">
+              <small>Quantidade</small>
+              <strong>1 unidade</strong>
+            </div>
+            <div class="solicitacao-dado">
+              <small>Urgência</small>
+              <strong>Prioritário</strong>
+            </div>
+            <label class="solicitacao-status">
+              <small>Atualizar status</small>
+              <select>
+                <option>Nova</option>
+                <option>Aceita</option>
+                <option>Em produção</option>
+                <option>Pronta para entrega</option>
+                <option>Recusada</option>
+              </select>
+            </label>
+            <a href="detalhe_solicitacao.html" class="pedido-seta" aria-label="Abrir solicitação CS-2026-0148">›</a>
+          </div>
+                    <div class="solicitacao-corpo">
+            <div class="solicitacao-dado">
+              <small>Código do paciente</small>
+              <strong class="solicitacao-destaque">PAC-5824</strong>
+            </div>
+            <div class="solicitacao-dado">
+              <small>Arquivo para impressão</small>
+              <strong class="solicitacao-destaque solicitacao-arquivo">modelo_protese.stl <span>2,4 MB</span></strong>
+            </div>
+            <div class="solicitacao-obs">
+              <small>Observações técnicas</small>
+              <p>Produzir conforme o modelo anexado, mantendo preenchimento de 35% e acabamento sem arestas nas superfícies de contato.</p>
+            </div>
+                        <div class="solicitacao-acoes">
+              <button type="button" class="botao-contorno botao-recusar">Recusar</button>
+              <button type="button" class="botao-contorno botao-aceitar">Aceitar</button>
+              <a href="detalhe_solicitacao.html" class="botao-contorno">Visualizar solicitação</a>
+            </div>
+          </div>
+        </li> 
+                <li class="pedido solicitacao">
+          <div class="pedido-info">
+            <div class="pedido-linha1">
+              <span class="selo selo-aceito">Aceita</span>
+              <span class="pedido-codigo">CS-2026-0145 · Recebida ontem, 16:18</span>
+            </div>
+            <h3>Órtese de punho</h3>
+            <p>Instituição Mooca • PETG • 28 jun 2026</p>
+          </div>
+
+          <div class="solicitacao-lado">
+            <div class="solicitacao-dado">
+              <small>Quantidade</small>
+              <strong>2 unidades</strong>
+            </div>
+            <div class="solicitacao-dado">
+              <small>Urgência</small>
+              <strong>Normal</strong>
+            </div>
+            <label class="solicitacao-status">
+              <small>Atualizar status</small>
+              <select>
+                <option>Nova</option>
+                <option selected>Aceita</option>
+                <option>Em produção</option>
+                <option>Pronta para entrega</option>
+                <option>Recusada</option>
+              </select>
+            </label>
+            <a href="detalhe_solicitacao.html" class="pedido-seta" aria-label="Abrir solicitação CS-2026-0145">›</a>
+          </div>
+
+          <div class="solicitacao-corpo">
+            <div class="solicitacao-dado">
+              <small>Código do paciente</small>
+              <strong class="solicitacao-destaque">PAC-5790</strong>
+            </div>
+            <div class="solicitacao-dado">
+              <small>Arquivo para impressão</small>
+              <strong class="solicitacao-destaque solicitacao-arquivo">ortese_punho.stl <span>1,8 MB</span></strong>
+            </div>
+            <div class="solicitacao-obs">
+              <small>Observações técnicas</small>
+              <p>Produzir duas unidades conforme o modelo anexado, com acabamento liso nas bordas.</p>
+            </div>
+            <div class="solicitacao-acoes">
+              <a href="detalhe_solicitacao.html" class="botao-contorno">Visualizar solicitação</a>
+              <button type="button" class="botao-contorno botao-recusar">Cancelar solicitação</button>
+            </div>
+          </div>
+        </li>   
+                 <li class="pedido solicitacao">
+          <div class="pedido-info">
+            <div class="pedido-linha1">
+              <span class="selo selo-impressao">Em produção</span>
+              <span class="pedido-codigo">CS-2026-0141 · Recebida 10 jun, 09:15</span>
+            </div>
+            <h3>Órtese de tornozelo</h3>
+            <p>Instituição Santo André • PLA médico • 20 jun 2026</p>
+          </div>
+
+          <div class="solicitacao-lado">
+            <div class="solicitacao-dado">
+              <small>Quantidade</small>
+              <strong>1 unidade</strong>
+            </div>
+            <div class="solicitacao-dado">
+              <small>Urgência</small>
+              <strong>Normal</strong>
+            </div>
+            <label class="solicitacao-status">
+              <small>Atualizar status</small>
+              <select>
+                <option>Nova</option>
+                <option>Aceita</option>
+                <option selected>Em produção</option>
+                <option>Pronta para entrega</option>
+                <option>Recusada</option>
+              </select>
+            </label>
+            <a href="detalhe_solicitacao.html" class="pedido-seta" aria-label="Abrir solicitação CS-2026-0141">›</a>
+          </div>
+
+          <div class="solicitacao-corpo">
+            <div class="solicitacao-dado">
+              <small>Código do paciente</small>
+              <strong class="solicitacao-destaque">PAC-5611</strong>
+            </div>
+            <div class="solicitacao-dado">
+              <small>Arquivo para impressão</small>
+              <strong class="solicitacao-destaque solicitacao-arquivo">ortese_tornozelo.stl <span>3,1 MB</span></strong>
+            </div>
+            <div class="solicitacao-obs">
+              <small>Observações técnicas</small>
+              <p>Impressão em andamento. Manter o preenchimento de 40% e revisar o encaixe antes da entrega.</p>
+            </div>
+            <div class="solicitacao-acoes">
+              <a href="detalhe_solicitacao.html" class="botao-contorno">Visualizar solicitação</a>
+              <button type="button" class="botao-contorno botao-recusar">Cancelar solicitação</button>
+            </div>
+          </div>
+        </li>
+    </ul>
+    </section>
+  </main>
+  <footer class="rodape" id="rodape">
+    <div class="rodape-interno">
+      <div class="rodape-linha">
+        <div class="rodape-marca">
+          <img src="../img/logo.png" alt="">
+          <div>
+            <b>Conecta Saúde</b>
+            <p>Uma iniciativa do Instituto Mauá de Tecnologia em parceria com instituições de saúde.</p>
+          </div>
+        </div>
+        <nav aria-label="Links do rodapé">
+          <a href="#privacidade">Privacidade</a>
+          <a href="#termos">Termos de uso</a>
+        </nav>
+      </div>
+      <p class="rodape-copy">© 2026 Instituto Mauá de Tecnologia</p>
+    </div>
+  </footer>
+    <script src="../js/app.js"></script>
+</body>
+</html>

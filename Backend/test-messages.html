@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Teste de Mensagens - PrintBridge</title>
+  <style>
+    body { font-family: sans-serif; margin: 30px; display: flex; gap: 20px; }
+    .card { background: #fff; padding: 20px; border: 1px solid #ccc; border-radius: 8px; width: 350px; }
+    input, textarea, button { width: 100%; padding: 8px; margin: 6px 0; box-sizing: border-box; }
+    button { background: #0070f3; color: white; border: none; cursor: pointer; font-weight: bold; }
+    .res { margin-top: 10px; padding: 8px; border-radius: 4px; font-size: 13px; max-height: 200px; overflow-y: auto; background: #f9f9f9; border: 1px solid #eee; }
+    .msg-item { margin-bottom: 8px; padding: 6px; background: #fff; border-radius: 4px; border: 1px solid #ddd; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h3>💬 Enviar Mensagem</h3>
+    <input type="text" id="orderId" placeholder="ID do Pedido (orderId)">
+    <input type="text" id="remetenteId" placeholder="ID do Remetente (remetenteId)">
+    <textarea id="texto" placeholder="Digite a mensagem..."></textarea>
+    <button onclick="enviarMensagem()">Enviar</button>
+    <div id="resEnvio" class="res" style="display:none;"></div>
+  </div>
+
+  <div class="card">
+    <h3>📋 Histórico do Chat</h3>
+    <input type="text" id="orderIdBusca" placeholder="ID do Pedido (orderId)">
+    <button onclick="carregarMensagens()">Carregar Conversa</button>
+    <div id="resChat" class="res"></div>
+  </div>
+
+  <script>
+    const API = 'http://localhost:5000/api/messages';
+
+    async function enviarMensagem() {
+      const orderId = document.getElementById('orderId').value;
+      const remetenteId = document.getElementById('remetenteId').value;
+      const texto = document.getElementById('texto').value;
+
+      const res = await fetch(API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ orderId, remetenteId, texto })
+      });
+
+      const data = await res.json();
+      const div = document.getElementById('resEnvio');
+      div.style.display = 'block';
+      div.innerHTML = res.ok ? 'Mensagem enviada com sucesso.' : `Erro: ${data.erro}`;
+
+      if (res.ok) {
+        document.getElementById('texto').value = '';
+        document.getElementById('orderIdBusca').value = orderId;
+        carregarMensagens();
+      }
+    }
+
+    async function carregarMensagens() {
+      const orderId = document.getElementById('orderIdBusca').value;
+      const res = await fetch(`${API}/${orderId}`);
+      const data = await res.json();
+      const div = document.getElementById('resChat');
+
+      if (!res.ok) {
+        div.innerHTML = `Erro: ${data.erro}`;
+        return;
+      }
+
+      if (data.mensagens.length === 0) {
+        div.innerHTML = 'Nenhuma mensagem encontrada.';
+        return;
+      }
+
+      div.innerHTML = data.mensagens.map(m => `
+        <div class="msg-item">
+          <strong>${m.remetenteId ? m.remetenteId.nomeInstituicao : 'Usuario'}:</strong> ${m.texto}
+        </div>
+      `).join('');
+    }
+  </script>
+</body>
+</html>

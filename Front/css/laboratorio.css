@@ -1,0 +1,482 @@
+/* Estilos da página Cadastro de laboratório */
+.etapa-cartao {
+  width: 310px;
+  padding: 18px 20px;
+  background: white;
+  border: 1px solid #d9e3e4;
+  border-radius: 16px;
+}
+
+.etapa-linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+  color: #263636;
+}
+
+.etapa-percentual {
+  color: #006767;
+  font-weight: 700;
+}
+
+.etapa-cartao small {
+  display: block;
+  color: #6b7777;
+  font-size: 12px;
+}
+
+.barra {
+  height: 6px;
+  margin-top: 14px;
+  border-radius: 999px;
+  background: #e3ecec;
+  overflow: hidden;
+}
+
+.barra-cheia {
+  height: 100%;
+  border-radius: 999px;
+  background: #006767;
+}
+
+.cadastro {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.etapas-menu {
+  position: sticky;
+  top: 24px;
+  overflow: hidden;
+  background: white;
+  border: 1px solid #d9e3e4;
+  border-radius: 16px;
+}
+
+.etapas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.etapas a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px;
+  border-left: 3px solid transparent;
+  color: #263636;
+  text-decoration: none;
+}
+
+.etapas .atual a {
+  background: #e1f1f0;
+  border-left-color: #006767;
+}
+
+.etapa-bolinha {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #d9e3e4;
+  border-radius: 50%;
+  background: white;
+  color: #6b7777;
+  font-size: 13px;
+}
+
+.etapas .feito .etapa-bolinha {
+  background: #1c7a4f;
+  border-color: #1c7a4f;
+  color: white;
+}
+
+.etapas .atual .etapa-bolinha {
+  border-color: #006767;
+  color: #006767;
+}
+
+.etapas b {
+  display: block;
+  font-size: 14px;
+}
+
+.etapas small {
+  color: #6b7777;
+  font-size: 12px;
+}
+
+.ajuda {
+  margin: 0 14px 14px;
+  padding: 18px;
+  border-radius: 12px;
+  background: #eef4f4;
+}
+
+.ajuda-icone {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  margin-bottom: 12px;
+  border: 1.5px solid #263636;
+  border-radius: 50%;
+  color: #263636;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ajuda b {
+  display: block;
+  color: #263636;
+}
+
+.ajuda p {
+  margin: 4px 0 10px;
+  color: #6b7777;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.ajuda a {
+  color: #006767;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.ajuda a:hover {
+  text-decoration: underline;
+}
+
+.form-cartao {
+  margin-bottom: 24px;
+  background: white;
+  border: 1px solid #d9e3e4;
+  border-radius: 16px;
+}
+
+.form-cartao-topo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 24px 28px 20px;
+  border-bottom: 1px solid #d9e3e4;
+}
+
+.form-cartao-topo > div {
+  flex: 1;
+}
+
+.form-icone {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #e1f1f0;
+}
+
+.form-cartao-topo h2 {
+  margin: 0;
+  color: #263636;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.form-cartao-topo p {
+  margin: 2px 0 0;
+  color: #6b7777;
+  font-size: 13px;
+}
+
+.form-corpo {
+  padding: 8px 28px 28px;
+}
+
+.grupo {
+  min-width: 0;
+  margin: 14px 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.grupo legend {
+  padding: 0;
+  margin-bottom: 6px;
+  color: #263636;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.form-icone {
+  color: #006767;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.pilula small {
+  color: #6b7777;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.pilulas-check .pilula input:checked + span::before {
+  content: "✓ ";
+}
+
+.parque {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.impressora {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid #d9e3e4;
+  border-radius: 12px;
+}
+
+.impressora > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.impressora b {
+  display: block;
+  color: #263636;
+}
+
+.impressora small {
+  color: #6b7777;
+  font-size: 12px;
+}
+
+.form-icone.mini {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  font-size: 11px;
+}
+
+.impressora-editar {
+  color: #006767;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.impressora-editar:hover {
+  text-decoration: underline;
+}
+
+.remover {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: #6b7777;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.remover:hover {
+  background: #edf3f3;
+  color: #263636;
+}
+
+.botao-adicionar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  padding: 12px 18px;
+  border: 1px solid #d9e3e4;
+  border-radius: 8px;
+  color: #006767;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.botao-adicionar:hover {
+  border-color: #006767;
+  background: #e1f1f0;
+}
+.requisitos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.requisito {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid #d9e3e4;
+  border-radius: 12px;
+  color: #3e4949;
+  font-size: 14px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.requisito:hover {
+  border-color: #006767;
+  background: #e1f1f0;
+}
+
+.requisito input,
+.termo input {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: #006767;
+}
+
+.termo {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid #d9e3e4;
+  color: #3e4949;
+  font-size: 14px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.termo a {
+  color: #006767;
+  font-weight: 700;
+}
+
+.suporte {
+  margin-bottom: 24px;
+  padding: 24px 28px;
+  border-radius: 16px;
+  background: #e1f1f0;
+}
+
+.suporte h2 {
+  margin: 0;
+  color: #263636;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.suporte p {
+  margin: 4px 0 16px;
+  color: #6b7777;
+  font-size: 14px;
+}
+
+.suporte-canais {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.suporte-canais a {
+  display: grid;
+  gap: 2px;
+  padding: 12px 18px;
+  border: 1px solid #d9e3e4;
+  border-radius: 12px;
+  background: white;
+  color: #263636;
+  text-decoration: none;
+}
+
+.suporte-canais a:hover {
+  border-color: #006767;
+}
+
+.suporte-canais small {
+  color: #6b7777;
+  font-size: 12px;
+}
+
+.cadastro-acoes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.cadastro-acoes .botao-principal {
+  margin-top: 0;
+  border: 0;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cadastro-acoes .botao-contorno {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+  padding: 0 22px;
+}
+
+@media (max-width: 900px) {
+  .cadastro {
+    grid-template-columns: 1fr;
+  }
+
+  .etapas-menu {
+    position: static;
+  }
+
+  .etapa-cartao {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-cartao-topo {
+    flex-wrap: wrap;
+    padding: 20px 18px 16px;
+  }
+
+  .form-corpo {
+    padding: 8px 18px 22px;
+  }
+
+  .suporte {
+    padding: 20px 18px;
+  }
+
+  .suporte-canais a {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .cadastro-acoes {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .cadastro-acoes .botao-principal,
+  .cadastro-acoes .botao-contorno {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratórios cadastrados</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/pedidos.css">
+  <link rel="stylesheet" href="../css/laboratorio_instituicao.css">
+  <link rel="stylesheet" href="../css/interacoes.css">
+</head>
+<body>
+
+  <header>
+    <a href="aacd.html" class="marca" aria-label="Conecta Saúde – painel">
+      <img src="../img/logo.png" alt="" width="42" height="42">
+      <span>Conecta Saúde<small>Instituto Mauá de Tecnologia</small></span>
+    </a>
+
+    <nav aria-label="Navegação principal">
+      <a href="aacd.html">Pedidos da Instituição</a>
+    <a href="laboratorio_instituicao.html" aria-current="page">Laboratórios</a>    </nav>
+
+    <a href="../index.html" class="botao-acessar" id="botao-sair">Sair</a>
+  </header>
+
+  <main class="painel">
+    <div class="painel-topo">
+      <div>
+        <span class="sobretitulo">Rede Conecta Saúde</span>
+        <h1>Laboratórios cadastrados</h1>
+        <p>Consulte parceiros, equipamentos e capacidades antes de direcionar uma solicitação.</p>
+      </div>
+    </div>
+        <!-- BUSCA E PREFERÊNCIA DE IMPRESSORA -->
+    <div class="lab-ferramentas">
+      <div class="lab-busca">
+        <img class="lab-lupa" src="../img/lupa.png" alt="">
+        <input type="search" id="busca-lab" placeholder="Buscar por nome, cidade ou material..." aria-label="Buscar laboratórios por nome, cidade ou material" autocomplete="off">
+        <small id="total-labs">3 laboratórios</small>
+      </div>
+
+      <div class="lab-preferencia">
+        <label for="filtro-impressora">Preferência de impressora</label>
+        <select id="filtro-impressora">
+          <option value="todas">Todas as impressoras</option>
+          <option value="pruzaMK4">Pruza MK4</option>
+          <option value="ultimakerS3">Ultimaker S3</option>
+          <option value="ultimakerS5">Ultimaker S5</option>
+          <option value="formLabs">FormLabs Form 3B+</option>
+          <option value="bambulab">Bambu Lab X1E</option>
+        </select>
+      </div>
+    </div>
+        <!-- LISTA DE LABORATÓRIOS -->
+    <ul class="lab-grade" id="laboratorios">
+
+      <li class="lab-cartao">
+        <div class="lab-cartao-topo">
+          <span class="lab-icone"><img class="icone" src="../img/icone-laboratorio.png" alt=""></span>
+          <div>
+            <p class="lab-tipo">Laboratório universitário</p>
+            <h3>Laboratório Mauá 01</h3>
+            <p class="lab-cidade">São Caetano do Sul, SP</p>
+            <span class="lab-status">Disponível</span>
+          </div>
+        </div>
+                <div class="lab-numeros">
+          <div><strong>2</strong><span>Impressoras</span></div>
+          <div><strong>3</strong><span>Materiais</span></div>
+        </div>
+
+        <ul class="lab-materiais" aria-label="Materiais disponíveis">
+          <li>PLA</li>
+          <li>PETG</li>
+          <li>TPU</li>
+        </ul>
+                <ul class="lab-contatos">
+          <li><b>E-mail</b> fablab@maua.br</li>
+          <li><b>Telefone</b> (11) 4239-3000</li>
+        </ul>
+
+        <a href="detalhe_laboratorio_instituicao.html" class="botao-contorno lab-ver">Ver detalhes ›</a>
+      </li>
+            <li class="lab-cartao">
+        <div class="lab-cartao-topo">
+          <span class="lab-icone"><img class="icone" src="../img/icone-laboratorio.png" alt=""></span>
+          <div>
+            <p class="lab-tipo">Centro de fabricação digital</p>
+            <h3>FabLab Saúde 02</h3>
+            <p class="lab-cidade">São Paulo, SP</p>
+            <span class="lab-status">Disponível</span>
+          </div>
+        </div>
+
+        <div class="lab-numeros">
+          <div><strong>2</strong><span>Impressoras</span></div>
+          <div><strong>3</strong><span>Materiais</span></div>
+        </div>
+
+        <ul class="lab-materiais" aria-label="Materiais disponíveis">
+          <li>PLA</li>
+          <li>PETG</li>
+          <li>Resina médica</li>
+        </ul>
+
+        <ul class="lab-contatos">
+          <li><b>E-mail</b> contato@fablabsaude.org.br</li>
+          <li><b>Telefone</b> (11) 3158-2470</li>
+        </ul>
+
+        <a href="detalhe_laboratorio_instituicao.html" class="botao-contorno lab-ver">Ver detalhes ›</a>
+      </li>
+
+      <li class="lab-cartao">
+        <div class="lab-cartao-topo">
+          <span class="lab-icone"><img class="icone" src="../img/icone-laboratorio.png" alt=""></span>
+          <div>
+            <p class="lab-tipo">Laboratório parceiro</p>
+            <h3>Laboratório Maker 03</h3>
+            <p class="lab-cidade">Santo André, SP</p>
+            <span class="lab-status lab-status-parcial">Capacidade parcial</span>
+          </div>
+        </div>
+
+        <div class="lab-numeros">
+          <div><strong>1</strong><span>Impressoras</span></div>
+          <div><strong>3</strong><span>Materiais</span></div>
+        </div>
+
+        <ul class="lab-materiais" aria-label="Materiais disponíveis">
+          <li>PLA</li>
+          <li>ABS</li>
+          <li>TPU</li>
+        </ul>
+
+        <ul class="lab-contatos">
+          <li><b>E-mail</b> producao@labmaker03.com.br</li>
+          <li><b>Telefone</b> (11) 4437-1088</li>
+        </ul>
+
+        <a href="detalhe_laboratorio_instituicao.html" class="botao-contorno lab-ver">Ver detalhes ›</a>
+      </li>
+    </ul>
+  </main>
+
+  <footer class="rodape" id="rodape">
+    <div class="rodape-interno">
+      <div class="rodape-linha">
+        <div class="rodape-marca">
+          <img src="../img/logo.png" alt="">
+          <div>
+            <b>Conecta Saúde</b>
+            <p>Uma iniciativa do Instituto Mauá de Tecnologia em parceria com instituições de saúde.</p>
+          </div>
+        </div>
+        <nav aria-label="Links do rodapé">
+          <a href="#privacidade">Privacidade</a>
+          <a href="#termos">Termos de uso</a>
+        </nav>
+      </div>
+      <p class="rodape-copy">© 2026 Instituto Mauá de Tecnologia</p>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

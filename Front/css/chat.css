@@ -1,0 +1,167 @@
+/* ============ CHAT DA SOLICITAÇÃO ============ */
+.chat {
+  margin-top: 24px;
+  background: #fff;
+  border: 1px solid #d9e3e4;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.chat-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  border-bottom: 1px solid #d9e3e4;
+}
+
+.chat-topo h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: #1f2f2f;
+}
+
+.chat-topo p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #6b7777;
+}
+
+.chat-online {
+  font-size: 12px;
+  font-weight: 700;
+  color: #006767;
+}
+
+.chat-online::before {
+  content: "● ";
+  font-size: 9px;
+  color: #1a8a5a;
+}
+/* ----- área das mensagens ----- */
+.chat-mensagens {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 220px;
+  max-height: 360px;
+  overflow-y: auto;
+  padding: 24px;
+  background: #f4f8f8;
+}
+
+.mensagem {
+  max-width: 70%;
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+
+.mensagem p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.mensagem small {
+  display: block;
+  margin-top: 6px;
+  text-align: right;
+  font-size: 11px;
+}
+
+/* mensagem que a outra parte enviou */
+.mensagem-recebida {
+  align-self: flex-start;
+  background: #fff;
+  color: #1f2f2f;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.mensagem-recebida small { color: #6b7777; }
+
+/* mensagem que o usuário enviou */
+.mensagem-enviada {
+  align-self: flex-end;
+  background: #006767;
+  color: #fff;
+}
+
+.mensagem-enviada small { color: #cfe8e6; }
+
+/* ----- caixa de digitar + botão enviar ----- */
+.chat-envio {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  padding: 16px;
+  border-top: 1px solid #d9e3e4;
+}
+
+.chat-envio textarea {
+  flex: 1;
+  min-height: 56px;
+  padding: 12px;
+  border: 1px solid #b9c4c4;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.chat-envio textarea:focus {
+  outline: 2px solid #006767;
+  outline-offset: 1px;
+}
+
+.chat-envio .botao-principal {
+  margin-top: 0;
+  border: 0;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.chat-envio .botao-principal:disabled {
+  background: #b9c4c4;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* texto só para leitores de tela (some da vista, mas continua na página) */
+.so-leitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* celular: balões mais largos e caixa de digitar empilhada */
+@media (max-width: 700px) {
+  .mensagem { max-width: 90%; }
+  .chat-envio { flex-direction: column; }
+}
+
+/* ----- botão cancelar solicitação (laboratório) ----- */
+.botao-cancelar-contorno {
+  display: block;
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px 22px;
+  border: 1px solid #d9e3e4;
+  border-radius: 8px;
+  background: #fff;
+  color: #006767;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.botao-cancelar-contorno:hover {
+  background: #fde8e3;
+  color: #cb4928;
+}

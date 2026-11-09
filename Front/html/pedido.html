@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhe do pedido</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/pedidos.css">
+  <link rel="stylesheet" href="../css/interacoes.css">
+  <link rel="stylesheet" href="../css/chat.css">
+</head>
+<body>
+
+<header>
+    <a href="aacd.html" class="marca" aria-label="Conecta Saúde – painel">
+      <img src="../img/logo.png" alt="" width="42" height="42">
+      <span>Conecta Saúde<small>Instituto Mauá de Tecnologia</small></span>
+    </a>
+
+    <nav aria-label="Navegação principal">
+      <a href="aacd.html" aria-current="page">Pedidos da Instituição</a>
+      <a href="laboratorio_instituicao.html">Laboratórios</a>
+    </nav>
+
+    <a href="../index.html" class="botao-acessar" id="botao-sair">Sair</a>
+</header>
+  <main class="painel">
+    <a href="aacd.html" class="voltar">‹ Voltar para os pedidos</a>
+
+    <!-- EXEMPLO: o JavaScript substitui estes dados -->
+    <div class="detalhe-topo">
+      <div class="pedido-linha1">
+        <span class="selo selo-impressao" id="detalhe-selo">Impressão</span>
+        <span class="pedido-codigo" id="detalhe-codigo">CS-2026-0142</span>
+      </div>
+      <h1 id="detalhe-titulo">Órtese de punho</h1>
+      <p id="detalhe-datas">Registrado em 02 jun 2026 • Prazo: 18 jun 2026</p>
+    </div>
+
+    <section class="detalhe-cartao" aria-labelledby="titulo-andamento">
+      <h2 id="titulo-andamento">Andamento</h2>
+      <ol class="progresso" aria-label="Etapas do pedido">
+        <li class="feito"><span class="bolinha">✓</span><span class="etapa">Registrado</span></li>
+        <li class="feito"><span class="bolinha">✓</span><span class="etapa">Aceito</span></li>
+        <li class="feito"><span class="bolinha">✓</span><span class="etapa">Impressão</span></li>
+        <li><span class="bolinha">4</span><span class="etapa">Entregue</span></li>
+      </ol>
+    </section>
+        <!-- EXEMPLO: o JavaScript substitui estes dados -->
+    <section class="detalhe-cartao" aria-labelledby="titulo-dados">
+      <h2 id="titulo-dados">Dados do pedido</h2>
+      <dl class="dados">
+        <div>
+          <dt>Paciente</dt>
+          <dd id="dado-paciente">••••4721</dd>
+        </div>
+        <div>
+          <dt>Tipo de peça</dt>
+          <dd id="dado-peca">Órtese de punho</dd>
+        </div>
+        <div>
+          <dt>Material</dt>
+          <dd id="dado-material">PLA médico</dd>
+        </div>
+        <div>
+          <dt>Prazo necessário</dt>
+          <dd id="dado-prazo">18 jun 2026</dd>
+        </div>
+        <div>
+          <dt>Urgência</dt>
+          <dd id="dado-urgencia">Normal</dd>
+        </div>
+        <div>
+          <dt>Laboratório</dt>
+          <dd id="dado-lab">FabLab da Mauá</dd>
+        </div>
+        <div class="dados-largo">
+          <dt>Medidas e observações</dt>
+          <dd id="dado-medidas">Punho com 15 cm de circunferência, tolerância de 1 mm. Acabamento macio nas bordas.</dd>
+        </div>
+                <div class="dados-largo">
+          <dt>Arquivo da peça</dt>
+          <dd>
+            <a href="#" class="arquivo" id="dado-arquivo" download>
+              <span class="arquivo-tipo">STL</span>
+              <span class="arquivo-nome" id="dado-arquivo-nome">ortese-punho.stl</span>
+              <span class="arquivo-baixar">Baixar</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </section>
+    <!-- Visualização do modelo .stl (aparece só quando o arquivo está disponível) -->
+    <section class="detalhe-cartao" id="secao-modelo" aria-labelledby="titulo-modelo" hidden>
+      <h2 id="titulo-modelo">Modelo 3D</h2>
+      <div class="visualizador" id="visualizador-stl" aria-label="Pré-visualização 3D do modelo"></div>
+      <small class="dica">Arraste para girar e role para aproximar.</small>
+    </section>
+        <!-- EXEMPLO: o JavaScript substitui estes dados -->
+    <section class="detalhe-cartao" aria-labelledby="titulo-historico">
+      <h2 id="titulo-historico">Histórico</h2>
+      <ol class="historico" id="historico">
+        <li>
+          <span class="historico-data">12 jun 2026 • 14:20</span>
+          <strong>Impressão iniciada</strong>
+          <p>O FabLab da Mauá iniciou a impressão da peça.</p>
+        </li>
+        <li>
+          <span class="historico-data">05 jun 2026 • 09:40</span>
+          <strong>Pedido aceito</strong>
+          <p>O FabLab da Mauá aceitou o pedido e confirmou o material.</p>
+        </li>
+        <li>
+          <span class="historico-data">02 jun 2026 • 16:05</span>
+          <strong>Necessidade registrada</strong>
+          <p>O pedido foi registrado pela instituição.</p>
+        </li>
+      </ol>
+    </section>
+
+        <!-- CHAT: conversa ligada a este pedido (CS-2026-0142) -->
+    <section class="chat" aria-labelledby="titulo-chat" data-solicitacao="CS-2026-0142">
+      <div class="chat-topo">
+        <div>
+          <h2 id="titulo-chat">Comunicação da solicitação</h2>
+          <p>CS-2026-0142 · Conversa com Laboratório Mauá 01</p>
+        </div>
+        <span class="chat-online">Online</span>
+      </div>
+
+      <div class="chat-mensagens" id="chat-mensagens" aria-live="polite">
+        <div class="mensagem mensagem-recebida">
+          <p>Olá! Recebemos os dados da solicitação. Podemos confirmar alguns detalhes técnicos?</p>
+          <small>10:48</small>
+        </div>
+        <div class="mensagem mensagem-enviada">
+          <p>Claro. O arquivo anexado já está na escala correta e pronto para fabricação.</p>
+          <small>10:52</small>
+        </div>
+      </div>
+
+      <div class="chat-envio">
+        <label class="so-leitor" for="chat-texto">Mensagem</label>
+        <textarea id="chat-texto" rows="2" placeholder="Escreva uma mensagem sobre esta solicitação..."></textarea>
+        <button type="button" class="botao-principal" id="chat-enviar" disabled>Enviar</button>
+      </div>
+    </section>
+  </main>
+
+<footer class="rodape" id="rodape">
+    <div class="rodape-interno">
+      <div class="rodape-linha">
+        <div class="rodape-marca">
+          <img src="../img/logo.png" alt="">
+          <div>
+            <b>Conecta Saúde</b>
+            <p>Uma iniciativa do Instituto Mauá de Tecnologia em parceria com instituições de saúde.</p>
+          </div>
+        </div>
+        <nav aria-label="Links do rodapé">
+          <a href="#privacidade">Privacidade</a>
+          <a href="#termos">Termos de uso</a>
+        </nav>
+      </div>
+      <p class="rodape-copy">© 2026 Instituto Mauá de Tecnologia</p>
+    </div>
+  </footer>
+<script src="../js/app.js"></script>
+</body>
+</html>

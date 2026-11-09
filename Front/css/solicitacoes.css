@@ -1,0 +1,343 @@
+/* Estilos da página Solicitações recebidas */
+.abas {
+  display: inline-flex;
+  gap: 6px;
+  padding: 6px;
+  margin-bottom: 32px;
+  background: #e8efef;
+  border-radius: 14px;
+}
+
+.aba {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  color: #6b7777;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.aba[aria-current="page"] {
+  background: white;
+  color: #006767;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.aba-contador {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #cb4928;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Etiqueta de status "Nova" (vermelha) */
+.selo-nova {
+  background: #fde8e3;
+  color: #cb4928;
+}
+
+.selo-nova::before {
+  content: "● ";
+  font-size: 9px;
+}
+
+/* Lado direito do cartão */
+.solicitacao-lado {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.solicitacao-dado small,
+.solicitacao-status small {
+  display: block;
+  margin-bottom: 6px;
+  color: #6b7777;
+  font-size: 12px;
+}
+
+.solicitacao-dado strong {
+  color: #263636;
+  font-size: 14px;
+}
+
+.solicitacao-status select {
+  min-width: 190px;
+  min-height: 44px;
+  padding: 0 12px;
+  font: inherit;
+  color: #263636;
+  background: white;
+  border: 1px solid #d9e3e4;
+  border-radius: 8px;
+}
+
+/* Parte de baixo do cartão */
+.solicitacao {
+  flex-wrap: wrap;
+}
+
+.solicitacao-corpo {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 64px;
+  padding-top: 24px;
+  border-top: 1px dashed #d9e3e4;
+}
+
+.solicitacao-dado .solicitacao-destaque {
+  font-size: 18px;
+}
+
+.solicitacao-dado .solicitacao-arquivo {
+  color: #006767;
+}
+
+.solicitacao-destaque span {
+  margin-left: 6px;
+  color: #8a9696;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.solicitacao-obs {
+  flex-basis: 100%;
+}
+
+.solicitacao-obs small {
+  display: block;
+  margin-bottom: 6px;
+  color: #6b7777;
+  font-size: 12px;
+}
+
+.solicitacao-obs p {
+  color: #263636;
+}
+
+/* Botões de ação do cartão */
+.solicitacao-acoes {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.solicitacao-acoes button {
+  font: inherit;
+  font-weight: 700;
+  background: white;
+  cursor: pointer;
+}
+
+.solicitacao-acoes .botao-aceitar {
+  color: white;
+  background: #006767;
+  border-color: #006767;
+}
+
+.solicitacao-acoes .botao-aceitar:hover {
+  background: #004f4f;
+}
+
+.botao-recusar {
+  color: #cb4928;
+}
+
+.solicitacao-acoes .botao-recusar:hover {
+  background: #fde8e3;
+}
+/* Bolinha nas etiquetas de status das solicitações */
+.solicitacao .selo-aceito::before,
+.solicitacao .selo-impressao::before {
+  content: "● ";
+  font-size: 9px;
+}
+
+/* Separação entre as solicitações */
+.solicitacao {
+  border-top: 10px solid #e4ecec;
+}
+
+.solicitacao:first-child {
+  border-top: 1px solid #d9e3e4;
+}
+/* Página de detalhe: duas colunas */
+.detalhe-grade {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.detalhe-cartao .detalhe-titulo {
+  margin: 6px 0 4px;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.detalhe-recebida {
+  margin: 0 0 24px;
+  color: #6b7777;
+  font-size: 13px;
+}
+
+/* Grade de dados em 2 colunas, com linhas de separação */
+.dados-2col {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+
+.dados-2col > div {
+  padding: 18px 0;
+  border-top: 1px solid #d9e3e4;
+}
+
+.dados-2col > div:nth-child(odd) {
+  padding-right: 24px;
+}
+
+.dados-2col > div:nth-child(even) {
+  padding-left: 24px;
+  border-left: 1px solid #d9e3e4;
+}
+
+.dados-2col dd {
+  font-size: 16px;
+}
+
+/* Observações e arquivo, no fim do cartão de dados */
+.detalhe-bloco {
+  margin-top: 24px;
+}
+
+.detalhe-rotulo {
+  display: block;
+  margin-bottom: 8px;
+  color: #6b7777;
+  font-size: 12px;
+}
+
+.detalhe-obs {
+  margin: 0;
+  padding: 18px 20px;
+  background: #f2f6f6;
+  border-radius: 12px;
+  color: #263636;
+  line-height: 1.6;
+}
+
+.arquivo-cartao {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid #d9e3e4;
+  border-radius: 12px;
+}
+
+.arquivo-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.arquivo-info small {
+  display: block;
+  color: #8a9696;
+  font-size: 12px;
+}
+
+.arquivo-cartao .botao-contorno {
+  padding: 10px 16px;
+  font-size: 13px;
+}
+
+/* Cartão "Andamento da produção" */
+.andamento h2 {
+  margin: 0 0 6px;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.andamento-sub {
+  margin: 0 0 20px;
+  color: #6b7777;
+  font-size: 12px;
+}
+
+.andamento-campo {
+  display: block;
+  margin-bottom: 8px;
+  color: #263636;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.andamento select {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 12px;
+  font: inherit;
+  color: #263636;
+  background: white;
+  border: 1px solid #d9e3e4;
+  border-radius: 8px;
+}
+
+.andamento-etapas {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 24px 0 0;
+  display: grid;
+  gap: 20px;
+  border-top: 1px solid #d9e3e4;
+}
+
+.andamento-etapas li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.andamento-numero {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #d9e3e4;
+  border-radius: 50%;
+  color: #6b7777;
+}
+
+.andamento-etapas b {
+  display: block;
+  color: #263636;
+  font-size: 14px;
+}
+
+.andamento-etapas small {
+  color: #6b7777;
+  font-size: 12px;
+}
+
+.andamento-nota {
+  margin: 24px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid #d9e3e4;
+  color: #6b7777;
+  font-size: 12px;
+}
+
+/* Contador de solicitações dentro do menu do cabeçalho */
+header nav .aba-contador { margin-left: 8px; }

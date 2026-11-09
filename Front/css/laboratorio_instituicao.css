@@ -1,0 +1,422 @@
+/* Estilos da página Laboratórios (visão da Instituição) */
+
+.lab-ferramentas {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.lab-busca {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 76px;
+  padding: 0 24px;
+  background: white;
+  border: 1px solid #d9e3e4;
+  border-radius: 16px;
+}
+
+.lab-busca:focus-within {
+  border-color: #006767;
+  box-shadow: 0 0 0 3px rgba(0, 103, 103, 0.12);
+}
+
+.lab-busca input {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+  color: #263636;
+  font-size: 16px;
+  outline: 0;
+}
+
+.lab-lupa {
+  width: 22px;
+  height: 22px;
+  flex: none;
+}
+
+.lab-busca small {
+  color: #6b7777;
+  white-space: nowrap;
+}
+
+.lab-preferencia {
+  padding: 14px 20px;
+  background: white;
+  border: 1px solid #d9e3e4;
+  border-radius: 16px;
+}
+
+.lab-preferencia label {
+  display: block;
+  margin-bottom: 4px;
+  color: #006767;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.lab-preferencia select {
+  width: 100%;
+  min-height: 32px;
+  border: 0;
+  background: transparent;
+  color: #263636;
+  font-weight: 600;
+  cursor: pointer;
+}
+/* ---------- lista de laboratórios ---------- */
+.lab-grade {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.lab-cartao {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background: white;
+  border: 1px solid #d9e3e4;
+  border-radius: 16px;
+}
+
+.lab-cartao-topo {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.lab-icone {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #e1f1f0;
+}
+
+.lab-tipo {
+  margin: 0 0 4px;
+  color: #006767;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.lab-cartao h3 {
+  margin: 0 0 4px;
+  color: #263636;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.lab-cidade {
+  margin: 0 0 14px;
+  color: #6b7777;
+  font-size: 12px;
+}
+
+/* "● Disponível" (bolinha + texto) */
+.lab-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #16845b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.lab-status::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.lab-status-parcial {
+  color: #9a6a00;
+}
+.lab-numeros {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 22px 0 16px;
+  padding-top: 22px;
+  border-top: 1px solid #d9e3e4;
+}
+
+.lab-numeros div + div {
+  padding-left: 20px;
+  border-left: 1px solid #d9e3e4;
+}
+
+.lab-numeros strong {
+  display: block;
+  color: #263636;
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.lab-numeros span {
+  color: #6b7777;
+  font-size: 12px;
+}
+
+.lab-materiais {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.lab-materiais li {
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: #e1f1f0;
+  color: #006767;
+  font-size: 11px;
+  font-weight: 700;
+}
+.lab-contatos {
+  margin: auto 0 20px;
+  padding: 0;
+  list-style: none;
+  color: #3e4949;
+  font-size: 12px;
+}
+
+.lab-contatos li + li {
+  margin-top: 6px;
+}
+
+.lab-contatos b {
+  display: inline-block;
+  min-width: 58px;
+  color: #6b7777;
+  font-weight: 600;
+}
+/* ---------- página de detalhes do laboratório ---------- */
+.lab-detalhe-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+  padding: 30px;
+  background: white;
+  border: 1px solid #d9e3e4;
+  border-radius: 16px;
+}
+
+.lab-detalhe-id {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.lab-detalhe-id h1 {
+  margin: 0 0 4px;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.lab-detalhe-id .lab-cidade {
+  margin: 0;
+  font-size: 13px;
+}
+
+.lab-icone-grande {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+}
+
+.lab-icone-grande .icone {
+  width: 34px;
+  height: 34px;
+}
+
+.lab-detalhe-acao {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.lab-detalhe-acao .botao-principal {
+  margin-top: 0;
+}
+.lab-detalhe-grade {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 24px;
+  align-items: start;
+}
+
+.lab-imp-cartao {
+  background: white;
+  border: 1px solid #d9e3e4;
+  border-radius: 16px;
+}
+
+.lab-imp-topo {
+  padding: 28px 30px 22px;
+  border-bottom: 1px solid #d9e3e4;
+}
+
+.lab-imp-topo h2 {
+  margin: 0 0 4px;
+  color: #263636;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.lab-imp-topo p {
+  margin: 0;
+  color: #6b7777;
+  font-size: 13px;
+}
+
+.lab-imp-lista {
+  margin: 0;
+  padding: 0 30px;
+  list-style: none;
+}
+
+.lab-imp {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 26px 0;
+}
+
+.lab-imp + .lab-imp {
+  border-top: 1px solid #d9e3e4;
+}
+
+.lab-icone-3d {
+  color: #006767;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.lab-imp-info {
+  flex: 1;
+}
+
+.lab-imp-info h3 {
+  margin: 0 0 4px;
+  color: #263636;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.lab-imp-info p {
+  margin: 0 0 4px;
+  color: #6b7777;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.lab-contato-cartao {
+  padding: 28px;
+  background: white;
+  border: 1px solid #d9e3e4;
+  border-radius: 16px;
+}
+
+.lab-avatar {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 14px;
+  border-radius: 50%;
+  background: #e1f1f0;
+  color: #006767;
+  font-weight: 800;
+}
+
+.lab-contato-cartao h2 {
+  margin: 0 0 18px;
+  color: #263636;
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.lab-dados {
+  margin: 0;
+}
+
+.lab-dados div {
+  padding: 14px 0;
+  border-top: 1px solid #d9e3e4;
+}
+
+.lab-dados dt {
+  margin-bottom: 3px;
+  color: #6b7777;
+  font-size: 11px;
+}
+
+.lab-dados dd {
+  margin: 0;
+  color: #263636;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.botao-petrol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background: #006767;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.botao-petrol:hover {
+  background: #004f50;
+}
+@media (max-width: 980px) {
+  .lab-grade {
+    grid-template-columns: repeat(2, 1fr);
+      .lab-detalhe-grade {
+    grid-template-columns: 1fr;
+  }
+  }
+}
+
+@media (max-width: 680px) {
+  .lab-ferramentas,
+  .lab-grade {
+    grid-template-columns: 1fr;
+  }
+
+  .lab-detalhe-topo,
+  .lab-detalhe-id,
+  .lab-detalhe-acao {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lab-detalhe-id h1 {
+    font-size: 32px;
+  }
+}

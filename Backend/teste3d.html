@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrintBridge - Teste de Upload e Visualizador 3D</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f6f8;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #008C91;
+    }
+    input, button {
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #008C91;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #007377;
+    }
+    #status {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    #viewer {
+      width: 100%;
+      height: 400px;
+      background-color: #e2e8f0;
+      margin-top: 20px;
+      border-radius: 4px;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>🖨️ Teste de Upload e Visualizador 3D (.stl)</h2>
+    <p>Selecione um arquivo .stl para enviar ao servidor e renderizar na tela:</p>
+    
+    <input type="file" id="stlInput" accept=".stl"><br>
+    <button onclick="enviarEVisualizar()">Enviar e Visualizar</button>
+
+    <div id="status"></div>
+    <div id="viewer"></div>
+  </div>
+
+  <!-- Importando Three.js e o STLLoader via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+  <script>
+    let scene, camera, renderer, controls;
+
+    function initViewer() {
+      const container = document.getElementById('viewer');
+      if (renderer) {
+        container.innerHTML = ''; // Limpa anterior se houver
+      }
+
+      // Cena
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0xe2e8f0);
+
+      // Câmera
+      camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+      camera.position.set(0, 0, 200);
+
+      // Renderizador
+      renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      container.appendChild(renderer.domElement);
+
+      // Controles de órbita (girar com o mouse)
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+
+      // Luzes
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+      scene.add(ambientLight);
+
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+      directionalLight.position.set(1, 1, 1).normalize();
+      scene.add(directionalLight);
+
+      // Loop de animação
+      function animate() {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+      }
+      animate();
+    }
+
+    async function enviarEVisualizar() {
+      const fileInput = document.getElementById('stlInput');
+      const statusDiv = document.getElementById('status');
+
+      if (fileInput.files.length === 0) {
+        statusDiv.style.color = 'red';
+        statusDiv.innerText = 'Por favor, selecione um arquivo .stl primeiro!';
+        return;
+      }
+
+      const file = fileInput.files[0];
+      const formData = new FormData();
+      formData.append('arquivoStl', file);
+
+      statusDiv.style.color = '#008C91';
+      statusDiv.innerText = 'Enviando arquivo para o servidor...';
+
+      try {
+        const response = await fetch('http://localhost:5000/api/upload-stl', {
+          method: 'POST',
+          body: formData
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.sucesso) {
+          statusDiv.style.color = 'green';
+          statusDiv.innerText = `Sucesso! Carregando visualização 3D...`;
+          
+          // Inicializa o viewer e carrega o arquivo através da URL pública gerada
+          initViewer();
+          carregarModelo3D(data.url);
+        } else {
+          statusDiv.style.color = 'red';
+          statusDiv.innerText = `Erro: ${data.erro || 'Falha no upload'}`;
+        }
+      } catch (error) {
+        console.error(error);
+        statusDiv.style.color = 'red';
+        statusDiv.innerText = 'Erro de conexão com o servidor.';
+      }
+    }
+
+    function carregarModelo3D(url) {
+      const loader = new THREE.STLLoader();
+      loader.load(url, function (geometry) {
+        const material = new THREE.MeshStandardMaterial({ 
+          color: 0x008C91, 
+          roughness: 0.4, 
+          metalness: 0.2 
+        });
+        const mesh = new THREE.Mesh(geometry, material);
+
+        // Centraliza a geometria na tela
+        geometry.computeBoundingBox();
+        const center = new THREE.Vector3();
+        geometry.boundingBox.getCenter(center);
+        geometry.center();
+
+        scene.add(mesh);
+
+        // Ajusta a câmera com base no tamanho do objeto
+        const size = new THREE.Vector3();
+        geometry.boundingBox.getSize(size);
+        const maxDim = Math.max(size.x, size.y, size.z);
+        camera.position.set(0, 0, maxDim * 2.5);
+        controls.update();
+
+        document.getElementById('status').innerText += ' — Renderizado com sucesso! 🚀';
+      }, (xhr) => {
+        console.log((xhr.loaded / xhr.total * 100) + '% carregado');
+      }, (error) => {
+        console.error(error);
+        document.getElementById('status').style.color = 'red';
+        document.getElementById('status').innerText = 'Erro ao carregar o modelo 3D.';
+      });
+    }
+  </script>
+</body>
+</html>

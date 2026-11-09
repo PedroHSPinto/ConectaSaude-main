@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualizar solicitação</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/pedidos.css">
+  <link rel="stylesheet" href="../css/laboratorio.css">
+  <link rel="stylesheet" href="../css/solicitacoes.css">
+  <link rel="stylesheet" href="../css/interacoes.css">
+    <link rel="stylesheet" href="../css/chat.css">
+</head>
+<body>
+
+  <header>
+    <a href="solicitacoes.html" class="marca" aria-label="Conecta Saúde – painel">
+      <img src="../img/logo.png" alt="" width="42" height="42">
+      <span>Conecta Saúde<small>Instituto Mauá de Tecnologia</small></span>
+    </a>
+
+      <nav aria-label="Navegação principal">
+      <a href="solicitacoes.html" aria-current="page">Solicitações recebidas <span class="aba-contador">3</span></a>
+      <a href="fablab.html">Cadastro do laboratório</a>
+    </nav>
+
+    <a href="../index.html" class="botao-acessar" id="botao-sair">Sair</a>
+  </header>
+
+  <main class="painel">
+
+    <a href="solicitacoes.html" class="voltar">‹ Voltar para solicitações</a>
+
+    <div class="painel-topo">
+      <div>
+        <span class="sobretitulo">Solicitação CS-2026-0148</span>
+        <h1>Visualizar solicitação</h1>
+        <p>Confira todos os dados enviados pela instituição e atualize o andamento da produção.</p>
+      </div>
+      <span class="selo selo-nova">Nova</span>
+    </div>
+        <div class="detalhe-grade">
+      <section class="detalhe-cartao" aria-labelledby="titulo-dados">
+        <span class="sobretitulo">Dados da solicitação</span>
+        <h2 class="detalhe-titulo" id="titulo-dados">Prótese de mão</h2>
+        <p class="detalhe-recebida">Recebida de Instituição São Paulo · Hoje, 10:42</p>
+
+        <dl class="dados dados-2col">
+          <div>
+            <dt>Código do paciente</dt>
+            <dd>PAC-5824</dd>
+          </div>
+          <div>
+            <dt>Instituição solicitante</dt>
+            <dd>Instituição São Paulo</dd>
+          </div>
+          <div>
+            <dt>Tipo de peça/prótese/órtese</dt>
+            <dd>Prótese de mão</dd>
+          </div>
+          <div>
+            <dt>Material solicitado</dt>
+            <dd>PLA médico</dd>
+          </div>
+          <div>
+            <dt>Quantidade</dt>
+            <dd>1 unidade</dd>
+          </div>
+          <div>
+            <dt>Prazo necessário</dt>
+            <dd>25 jun 2026</dd>
+          </div>
+          <div>
+            <dt>Urgência</dt>
+            <dd>Prioritário</dd>
+          </div>
+          <div>
+            <dt>Laboratório responsável</dt>
+            <dd>Laboratório Mauá 01</dd>
+          </div>
+        </dl>
+                <div class="detalhe-bloco">
+          <span class="detalhe-rotulo">Observações e especificações técnicas</span>
+          <p class="detalhe-obs">Produzir conforme o modelo anexado, mantendo preenchimento de 35% e acabamento sem arestas nas superfícies de contato. Validar as medidas antes de iniciar a impressão.</p>
+        </div>
+
+        <div class="detalhe-bloco">
+          <span class="detalhe-rotulo">Arquivo para impressão</span>
+          <div class="arquivo-cartao">
+            <span class="arquivo-tipo">STL</span>
+            <div class="arquivo-info">
+              <span class="arquivo-nome">modelo_protese.stl</span>
+              <small>Arquivo 3D · 2,4 MB</small>
+            </div>
+            <a href="#" class="botao-contorno">Visualizar arquivo</a>
+          </div>
+        </div>
+
+            <!-- CHAT: conversa ligada a esta solicitação (CS-2026-0148) -->
+    <section class="chat" aria-labelledby="titulo-chat" data-solicitacao="CS-2026-0148">
+      <div class="chat-topo">
+        <div>
+          <h2 id="titulo-chat">Comunicação da solicitação</h2>
+          <p>CS-2026-0148 · Conversa com Instituição São Paulo</p>
+        </div>
+        <span class="chat-online">Online</span>
+      </div>
+
+      <div class="chat-mensagens" id="chat-mensagens" aria-live="polite">
+        <div class="mensagem mensagem-recebida">
+          <p>Olá! Recebemos os dados da solicitação. Podemos confirmar alguns detalhes técnicos?</p>
+          <small>10:48</small>
+        </div>
+        <div class="mensagem mensagem-enviada">
+          <p>Claro. O arquivo anexado já está na escala correta e pronto para fabricação.</p>
+          <small>10:52</small>
+        </div>
+      </div>
+
+      <div class="chat-envio">
+        <label class="so-leitor" for="chat-texto">Mensagem</label>
+        <textarea id="chat-texto" rows="2" placeholder="Escreva uma mensagem sobre esta solicitação..."></textarea>
+        <button type="button" class="botao-principal" id="chat-enviar" disabled>Enviar</button>
+      </div>
+    </section>
+      </section>
+            <section class="detalhe-cartao andamento" aria-labelledby="titulo-andamento">
+        <h2 id="titulo-andamento">Andamento da produção</h2>
+        <p class="andamento-sub">Atualize o status para manter a instituição informada.</p>
+
+        <label class="andamento-campo" for="status-atual">Status atual</label>
+        <select id="status-atual">
+          <option selected>Nova</option>
+          <option>Aceita</option>
+          <option>Em produção</option>
+          <option>Pronta para entrega</option>
+          <option>Recusada</option>
+        </select>
+
+        <ol class="andamento-etapas">
+          <li>
+            <span class="andamento-numero">1</span>
+            <div>
+              <b>Aceita</b>
+              <small>Confirmar capacidade</small>
+            </div>
+          </li>
+          <li>
+            <span class="andamento-numero">2</span>
+            <div>
+              <b>Em produção</b>
+              <small>Iniciar fabricação</small>
+            </div>
+          </li>
+          <li>
+            <span class="andamento-numero">3</span>
+            <div>
+              <b>Pronta para entrega</b>
+              <small>Finalizar produção</small>
+            </div>
+          </li>
+        </ol>
+
+        <button type="button" class="botao-cancelar-contorno" id="cancelar-solicitacao">Cancelar solicitação</button>
+
+        <p class="andamento-nota">As alterações são registradas automaticamente no histórico.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape" id="rodape">
+    <div class="rodape-interno">
+      <div class="rodape-linha">
+        <div class="rodape-marca">
+          <img src="../img/logo.png" alt="">
+          <div>
+            <b>Conecta Saúde</b>
+            <p>Uma iniciativa do Instituto Mauá de Tecnologia em parceria com instituições de saúde.</p>
+          </div>
+        </div>
+        <nav aria-label="Links do rodapé">
+          <a href="#privacidade">Privacidade</a>
+          <a href="#termos">Termos de uso</a>
+        </nav>
+      </div>
+      <p class="rodape-copy">© 2026 Instituto Mauá de Tecnologia</p>
+    </div>
+  </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>
